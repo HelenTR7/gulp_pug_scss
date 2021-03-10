@@ -1,0 +1,76 @@
+@import "./main/reset";
+
+$blue: #000;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #000;
+  background: #fff;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.first-section {
+  background: #EEEFF1;
+  padding: 0 0 50px;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  &__img {}
+  &__bottom {
+    display: flex;
+  }
+  &__img-wrap,
+  &__content {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+  &__title {
+    margin: 0 0 20px;
+  }
+  &__text {
+    margin: 0 0 20px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: blue;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+.nav {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-left: 30px;
+  }
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all ease 0.3s;
+    &:hover,
+    &.active {
+      color: blue;
+    }
+  }
+}
+
+.nav__link:hover,
+.nav__link.active {}
