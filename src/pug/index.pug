@@ -31,4 +31,25 @@ block content
                     p.first-section__text Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
                     .first-section__btn
                         a(href="#").btn Написать мне
+    section.about-section
+        .container
+            h2.about-section__title.h2 Обо мне
+            .about-section__content
+                p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+    .projects
+        .container
+            .projects__inner
+                mixin project()
+                    .project
+                        .project__img-wrap
+                            img(src="./assets/imgs/project.svg")
+                        .project__content
+                            .project__title 40+
+                            .project__text проектов
+                +project()
+                +project()
+                +project()
+                +project()
+                +project()
+                +project()
 

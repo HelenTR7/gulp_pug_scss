@@ -1,4 +1,8 @@
+@import "./main/stylesheet";
 @import "./main/reset";
+
+$tablet: 1139px;
+$mobile : 799px;
 
 $blue: #000;
 * {
@@ -6,6 +10,7 @@ $blue: #000;
 }
 
 html {
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.4;
   color: #000;
@@ -17,6 +22,18 @@ html {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+@media screen and (max-width: $tablet) {
+  .container {
+    width: 800px;
+  }
+}
+@media screen and (max-width: $mobile) {
+  .container {
+    width: 100%;
+  }
+}
+
 
 .first-section {
   background: #EEEFF1;
@@ -30,17 +47,37 @@ html {
   &__img {}
   &__bottom {
     display: flex;
+    flex-wrap: wrap;
   }
   &__img-wrap,
   &__content {
     max-width: 50%;
     flex: 0 0 50%;
   }
+  &__img2 {
+    max-width: 100%;
+  }
   &__title {
     margin: 0 0 20px;
   }
   &__text {
     margin: 0 0 20px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .first-section {
+    &__bottom {
+      display: block;
+      text-align: center;
+    }
+    &__img-wrap {
+      margin: 0 0 30px;
+    }
+    &__img-wrap,
+    &__content {
+      max-width: 100%;
+    }
   }
 }
 
@@ -53,10 +90,10 @@ html {
   text-transform: uppercase;
 }
 
-
 .nav {
   &__list {
     display: flex;
+    flex-wrap: wrap;
   }
   &__item {
     margin-left: 30px;
@@ -73,4 +110,66 @@ html {
 }
 
 .nav__link:hover,
-.nav__link.active {}
+.nav__link.active {
+  color: blue;
+}
+
+.about-section {
+  text-align: center;
+  padding: 50px 0;
+  &__title {
+    margin: 0 0 30px;
+  }
+  &__content {
+    display: inline-block;
+    max-width: 540px;
+    p {
+      margin: 0 0 15px;
+    }
+  }
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+}
+
+.projects {
+  background: #34547A;
+  padding: 50px 0;
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.project {
+  display: flex;
+  color: #fff;
+  &__img-wrap {
+    max-width: 50px;
+    flex: 0 0 50px;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__content {
+    max-width: calc(100% - 50px);
+    flex: 0 0 calc(100% - 50px);
+    padding-left: 15px;
+  }
+  &__title {
+    font-weight: 500;
+  }
+  &__text {}
+}
+
+@media screen and (max-width: $tablet) {
+  .project {
+    margin: 0 0 15px;
+    max-width: 33.3333%;
+    flex: 0 0 33.3333%;
+  }
+}
